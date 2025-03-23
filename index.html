@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Alathan App</title>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-info">
+        <h1 class="app-title">مواعيد أذان الصلوات الست</h1>
+        <div class="date-info">
+          <h2 class="city-name">مدينة القاهرة</h2>
+        </div>
+      </div>
+      <div class="content">
+        <div class="Fajr">
+          <h3 class="athan">الفجر</h3>
+          <h4 class="athan-time">4:30</h4>
+        </div>
+        <div class="Sunrise">
+          <h3 class="athan">الشروق</h3>
+          <h4 class="athan-time">4:30</h4>
+        </div>
+        <div class="Dhuhr">
+          <h3 class="athan">الضهر</h3>
+          <h4 class="athan-time">4:30</h4>
+        </div>
+        <div class="Asr">
+          <h3 class="athan">العصر</h3>
+          <h4 class="athan-time">4:30</h4>
+        </div>
+        <div class="Maghrib">
+          <h3 class="athan">المغرب</h3>
+          <h4 class="athan-time">4:30</h4>
+        </div>
+        <div class="Isha">
+          <h3 class="athan">العشا</h3>
+          <h4 class="athan-time">4:30</h4>
+        </div>
+      </div>
+
+      <div class="select-box">
+        <label for="colors"> إختر مدينتك</label>
+        <select id="colors" name="colors">
+          <!-- <option value="Al Qāhirah">القاهرة</option>
+          <option value="Al Iskandarīyah">الاسكندرية</option>
+          <option value="Al Ismā'īlīyah">الإسماعيلية</option> -->
+        </select>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

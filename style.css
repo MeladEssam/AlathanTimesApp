@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+  /* font-family: "Amiri", serif; */
+  font-family: system-ui;
+}
+
+body {
+  background: #1c1d1d;
+  direction: rtl;
+}
+.container {
+  margin: 100px auto;
+  width: 80%;
+  background: #262829;
+  padding: 15px;
+  border-radius: 6px;
+}
+.container .app-title {
+  text-align: center;
+  color: #ffffff;
+  background: #060606;
+  background: #120f0f;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 200px;
+  width: fit-content;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.container .city-name {
+  color: #ff5722;
+  background: #232222;
+  width: fit-content;
+  padding: 10px 30px;
+  width: fit-content;
+  text-align: center;
+  border-radius: 49px;
+}
+.container .content {
+  display: flex;
+  gap: 20px;
+  background: #151515;
+  padding: 15px;
+}
+
+.app-info {
+  margin-bottom: 20px;
+}
+
+.container .content > div {
+  flex-grow: 1;
+  background-color: #333232;
+  text-align: center;
+
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 20px;
+}
+.content div .athan {
+  background: #1c1e1f;
+  padding: 10px;
+  color: #ba2e24;
+  border-radius: 6px;
+}
+.content div .athan-time {
+  padding: 15px 10px;
+  border-radius: 6px;
+}
+.select-box {
+  margin: 100px auto;
+  width: 50%;
+  background: #1e1e1e;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.select-box label {
+  color: #009688;
+  font-size: 20px;
+  font-weight: bold;
+}
+.select-box select {
+  flex-grow: 1;
+  background: #131313;
+  color: #009688;
+  font-size: 20px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.select-box select option {
+  padding: 5px;
+  margin-bottom: 5px;
+  display: block;
+  cursor: pointer;
+  color: #009688;
+}
