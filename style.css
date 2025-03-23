@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #fff;
+  /* color: #fff; */
   /* font-family: "Amiri", serif; */
   font-family: system-ui;
 }
@@ -22,9 +22,9 @@ body {
 }
 .container .app-title {
   text-align: center;
-  color: #ffffff;
+  color: #009688;
   background: #060606;
-  background: #120f0f;
+  background: #000000;
   margin-bottom: 20px;
   padding: 10px;
   width: 200px;
@@ -35,8 +35,8 @@ body {
   margin-bottom: 40px;
 }
 .container .city-name {
-  color: #ff5722;
-  background: #232222;
+  color: #009688;
+  background: #0a0909;
   width: fit-content;
   padding: 10px 30px;
   width: fit-content;
@@ -48,6 +48,7 @@ body {
   gap: 20px;
   background: #151515;
   padding: 15px;
+  flex-wrap: wrap;
 }
 
 .app-info {
@@ -102,4 +103,22 @@ body {
   display: block;
   cursor: pointer;
   color: #009688;
+}
+.date-info .day-date-name {
+  background-color: #20202042;
+  padding: 15px;
+  margin-top: 20px;
+  color: #009688;
+  color: #fff;
+  width: 300px;
+  border-radius: 10px;
+}
+.date-info .day-date-name .theday {
+}
+.date-info .day-date-name .day-date {
+  margin-top: 10px;
+}
+.date-info .day-date-name span {
+  color: #009688;
+  font-size: 20px;
 }

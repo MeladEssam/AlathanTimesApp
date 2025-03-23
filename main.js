@@ -39,77 +39,18 @@ function createSelectOptions() {
 
 createSelectOptions();
 
-async function getData() {
-  // let response = await axios.get(
-  //   "https://api.aladhan.com/v1/timingsByCity?country=EG&city=Al Qāhirah"
-  // );
-
-  // let response = await axios.get(
-  //   "https://api.aladhan.com/v1/timingsByCity?country=SA&city=Makkah al Mukarramah"
-  // );
-  //US
-  // let response = await axios.get(
-  //   "https://api.aladhan.com/v1/timingsByCity?country=US&city=New York"
-  // );
-  let response = await axios.get(
-    "https://api.aladhan.com/v1/timingsByCity?country=AE&city=Abū Z̧aby"
-  );
-  let responseData = response.data;
-  let dateObject = responseData.data.date;
-  console.log(dateObject);
-  let timingsObject = responseData.data.timings;
-  console.log(timingsObject);
-
-  let Fajr = timingsObject.Fajr;
-  FajrTimeElment.innerHTML = Fajr;
-  let Sunrise = timingsObject.Sunrise;
-  SunriseTimeElment.innerHTML = Sunrise;
-  let Dhuhr = timingsObject.Dhuhr;
-  DhuhrTimeElment.innerHTML = Dhuhr;
-  let Asr = timingsObject.Asr;
-  AsrTimeElment.innerHTML = Asr;
-  let Maghrib = timingsObject.Maghrib;
-  MaghribTimeElment.innerHTML = Maghrib;
-  let Isha = timingsObject.Isha;
-  IshaTimeElment.innerHTML = Isha;
-
-  // console.log(Fajr);
-  // console.log(Sunrise);
-  // console.log(Dhuhr);
-  // console.log(Asr);
-  // console.log(Maghrib);
-  // console.log(Isha);
-}
-
-// getData();
-
-// document.getElementById("colors").addEventListener("change", function () {
-//   let selectedValue = this.value;
-
-//   console.log(selectedValue);
-// });
-
-// let optionsList = document.querySelectorAll("select option");
-// // console.log(optionsList);
-
-// optionsList.forEach((opption) => {
-//   opption.onclick = function () {
-//     console.log(opption.value);
-
-//     //all logic
-//   };
-// });
-
 async function getAthanData(countryName, cityName) {
   let response = await axios.get(
     `https://api.aladhan.com/v1/timingsByCity?country=${countryName}&city=${cityName}`
   );
   // console.log(response.data);
   let responseData = response.data;
+  let dateObject = responseData.data.date;
+  let thedayDate = dateObject.readable;
+  showDate(thedayDate);
+
   let timingsObject = responseData.data.timings;
-  // let dateObject = responseData.data.date;
-  // console.log(dateObject);
-  console.log(timingsObject);
+
   let Fajr = timingsObject.Fajr;
   FajrTimeElment.innerHTML = Fajr;
   let Sunrise = timingsObject.Sunrise;
@@ -125,18 +66,31 @@ async function getAthanData(countryName, cityName) {
 
   cityNameElement.innerHTML = `مدينة ${countryCityMap.get(cityName)[1]}`;
 }
+
+//call function
 getAthanData("EG", "Al Qāhirah");
 
-// let optionsList = document.querySelectorAll("select option");
-// console.log(optionsList);
-
-// optionsList.forEach((option) => {
-//   option.onclick = function () {
-//     console.log(option.value);
-//   };
-// });
 document.querySelector("#colors").addEventListener("change", function () {
   let cityName = this.value;
   let countryName = countryCityMap.get(cityName)[0];
   getAthanData(countryName, cityName);
 });
+
+function showDate(the_day) {
+  const date = new Date(the_day);
+  const arabicDate = date.toLocaleDateString("ar-EG", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  let listDate = arabicDate.split("،");
+  let dayName = listDate[0];
+  let dayDate = listDate[1];
+  console.log(dayName);
+  console.log(dayDate);
+
+  document.querySelector(".day-date-name .theday span").innerHTML = dayName;
+  document.querySelector(".day-date-name .day-date span").innerHTML = dayDate;
+}
